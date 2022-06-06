@@ -1,3 +1,5 @@
+**ABANDONED!**
+
 Caveats
 -------
 - You MUST set `dataSource` and `delegate` as soon as you instantiate `SwiftPhotoGallery` object
