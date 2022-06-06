@@ -14,5 +14,6 @@ let package = Package(
     ],
     targets: [
         .target(name: "SwiftPhotoGallery", path: "Sources"),
+        .testTarget(name: "SwiftPhotoGalleryTest", dependencies: ["SwiftPhotoGallery"], path: "Tests"),
     ]
 )

@@ -21,7 +21,7 @@ import UIKit
 
 // MARK: ------ SwiftPhotoGallery ------
 
-public class SwiftPhotoGallery: UIViewController {
+open class SwiftPhotoGallery: UIViewController {
 
     fileprivate var animateImageTransition = false
     fileprivate var isViewFirstAppearing = true
@@ -134,13 +134,13 @@ public class SwiftPhotoGallery: UIViewController {
 
     // MARK: Lifecycle methods
 
-    public override func viewWillLayoutSubviews() {
+    open override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
 
         flowLayout.itemSize = view.bounds.size
     }
 
-    public override func viewDidLayoutSubviews() {
+    open override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
 
         if needsLayout {
@@ -162,7 +162,7 @@ public class SwiftPhotoGallery: UIViewController {
         }
     }
 
-    public override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor.black
@@ -175,7 +175,7 @@ public class SwiftPhotoGallery: UIViewController {
         setupGestureRecognizers()
     }
 
-    public override func viewDidAppear(_ animated: Bool) {
+    open override func viewDidAppear(_ animated: Bool) {
         if currentPage < 0 {
             currentPage = 0
         }
@@ -183,7 +183,7 @@ public class SwiftPhotoGallery: UIViewController {
     }
 
     #if os(iOS)
-    public override var prefersStatusBarHidden: Bool {
+    open override var prefersStatusBarHidden: Bool {
         get {
             return hideStatusBar
         }
@@ -192,14 +192,14 @@ public class SwiftPhotoGallery: UIViewController {
 
 
     // MARK: Rotation Handling
-    public override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+    open override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
         deviceInRotation = true
         needsLayout = true
     }
 
     #if os(iOS)
-    public override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+    open override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         get {
             return .allButUpsideDown
         }
@@ -207,7 +207,7 @@ public class SwiftPhotoGallery: UIViewController {
     #endif
 
     #if os(iOS)
-    public override var shouldAutorotate: Bool {
+    open override var shouldAutorotate: Bool {
         get {
             return true
         }
@@ -398,7 +398,7 @@ public class SwiftPhotoGallery: UIViewController {
 
     fileprivate func getImage(currentPage: Int) -> UIImage {
         let imageForPage = dataSource?.imageInGallery(gallery: self, forIndex: currentPage)
-        return imageForPage!
+        return imageForPage ?? UIImage()
     }
 
 }
