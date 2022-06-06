@@ -109,11 +109,8 @@ open class SwiftPhotoGallery: UIViewController {
     private var needsLayout = true
 
     // MARK: Public Interface
-    public init(delegate: SwiftPhotoGalleryDelegate, dataSource: SwiftPhotoGalleryDataSource) {
+    public init() {
         super.init(nibName: nil, bundle: nil)
-
-        self.dataSource = dataSource
-        self.delegate = delegate
     }
 
     required public init?(coder aDecoder: NSCoder) {

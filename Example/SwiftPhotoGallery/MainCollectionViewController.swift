@@ -45,7 +45,9 @@ class MainCollectionViewController: UICollectionViewController {
 
         index = indexPath.item
 
-        let gallery = SwiftPhotoGallery(delegate: self, dataSource: self)
+        let gallery = SwiftPhotoGallery()
+        gallery.dataSource = self
+        gallery.delegate = self
         gallery.backgroundColor = UIColor.black
         gallery.pageIndicatorTintColor = UIColor.gray.withAlphaComponent(0.5)
         gallery.currentPageIndicatorTintColor = UIColor(red: 0.0, green: 0.66, blue: 0.875, alpha: 1.0)

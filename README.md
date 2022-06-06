@@ -1,3 +1,10 @@
+Caveats
+-------
+- You MUST set `dataSource` and `delegate` as soon as you instantiate `SwiftPhotoGallery` object
+  and SHOULD NEVER change it after once set.
+
+
+
 # SwiftPhotoGallery
 
 [![Platform](https://img.shields.io/badge/platform-iOS%20%7C%20tvOS-blue.svg?style=flat)](http://cocoapods.org/pods/SwiftPhotoGallery)
